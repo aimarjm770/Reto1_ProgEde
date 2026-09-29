@@ -9,8 +9,9 @@ public class Retoejercicio2 {
 		Scanner teclado = new Scanner(System.in);
 
 		String DNI;
-		String tipo;
-		String continuar;
+
+		int tipo;
+		int continuar;
 
 		int carreras;
 		int minutos;
@@ -19,6 +20,7 @@ public class Retoejercicio2 {
 		int totalParticipantes = 0;
 		int menosDe60 = 0;
 		int masDe3Carreras = 0;
+
 		int tiempoTotal = 0;
 		int mejorTiempo = 0;
 
@@ -31,22 +33,25 @@ public class Retoejercicio2 {
 			System.out.println("1. Individual");
 			System.out.println("2. Pareja");
 
-			tipo = teclado.next();
+			tipo = teclado.nextInt();
 
-			while (!tipo.equals("1") && !tipo.equals("2")) {
+			while (tipo != 1 && tipo != 2) {
+
 				System.out.println("Opcion no valida. Introduce 1 o 2.");
-				tipo = teclado.next();
+				tipo = teclado.nextInt();
 			}
 
 			System.out.println("En cuantas carreras populares has participado?");
 			carreras = teclado.nextInt();
 
 			while (carreras == 0) {
+
 				System.out.println("No es correcto. Debes introducir un numero mayor que 0.");
 				carreras = teclado.nextInt();
 			}
 
 			if (carreras > 3) {
+
 				masDe3Carreras++;
 			}
 
@@ -59,27 +64,36 @@ public class Retoejercicio2 {
 			int tiempo = minutos * 60 + segundos;
 
 			if (totalParticipantes == 0) {
+
 				mejorTiempo = tiempo;
 			}
 
 			if (tiempo < mejorTiempo) {
+
 				mejorTiempo = tiempo;
 			}
 
 			tiempoTotal = tiempoTotal + tiempo;
+
 			totalParticipantes++;
 
 			if (tiempo < 3600) {
+
 				System.out.println("Ha terminado en menos de 60 minutos");
 				menosDe60++;
+
 			} else {
+
 				System.out.println("No ha terminado en menos de 60 minutos");
 			}
 
-			System.out.println("Quieres registrar otro participante? S/N");
-			continuar = teclado.next();
+			System.out.println("Quieres registrar otro participante?");
+			System.out.println("1. Si");
+			System.out.println("2. No");
 
-		} while (continuar.equals("S"));
+			continuar = teclado.nextInt();
+
+		} while (continuar == 1);
 
 		System.out.println("Total de participantes: " + totalParticipantes);
 
@@ -92,6 +106,7 @@ public class Retoejercicio2 {
 		System.out.println("Tiempo medio: " + tiempoMedio + " segundos");
 
 		System.out.println("Mejor tiempo: " + mejorTiempo + " segundos");
-
 	}
 }
+
+	
