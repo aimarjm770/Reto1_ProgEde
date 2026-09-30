@@ -1,4 +1,4 @@
-package Ej1;
+package Prncipal;
 
 import java.util.Scanner;
 
@@ -6,6 +6,7 @@ public class Ej1reto {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		//Variables
 		int Respuesta=0;
 		int si;
 		int kilometroscoche;
@@ -30,14 +31,9 @@ public class Ej1reto {
 		System.out.println("¿Cuantas personas se van a registrar?");
 
 		numeropersonas=teclado.nextInt();
-
 		boolean finalizar=false;
-
 		while(finalizar==false) {
-
-			System.out.println(
-
-					"1.	Transporte en coche "
+			System.out.println(	"1.	Transporte en coche "
 
 							+ "2.	Transporte en autobús "
 
@@ -59,7 +55,8 @@ public class Ej1reto {
 					emisionescoche=kilometroscoche*0.21;
 				}else {System.out.println("ERROR");
 				System.out.println("Vuelva a intentarlo");
-				}}
+				}//Fin del else
+				}//Fin del if
 			if(Respuesta==2) {
 				System.out.println("Cuantos kilometros recorrio en autobus");//0,1kg por km
 				kilometrobus=teclado.nextInt();
@@ -68,8 +65,8 @@ public class Ej1reto {
 					emisionesbus=kilometrobus*0.1; }
 				else {System.out.println("ERROR");
 				System.out.println("Vuelva a intentarlo");
-				}
-			}
+				}//Fin del else
+				}//Fin del if
 
 
 			if(Respuesta==3) {
@@ -79,8 +76,8 @@ public class Ej1reto {
 					emisionesbici=	kilometrosbicicleta*0;
 				else {System.out.println("ERROR");
 				System.out.println("Vuelva a intentarlo");
-				}
-			}	
+				}//Fin del else
+				}//Fin del if	
 
 
 			if(Respuesta==4) {
@@ -96,7 +93,9 @@ public class Ej1reto {
 
 
 
-					}}}if(Respuesta==5) {
+					}
+					}//Fin del if
+				}if(Respuesta==5) {
 						System.out.println("Cuantas horas utilizo el ordenador esta semana ");//0,08 kg CO₂ por hora
 						horasordenador=teclado.nextInt();
 						if(horasordenador>0)
@@ -106,7 +105,8 @@ public class Ej1reto {
 
 
 
-						}}if(Respuesta==6) {
+						}//Fin del if
+						}if(Respuesta==6) {
 							System.out.println("Cuantas horas utilizo el movil esta semana ");//0,08 kg CO₂ por hora
 							horasmovil=teclado.nextInt();
 							if(horasmovil>0)
@@ -119,13 +119,12 @@ public class Ej1reto {
 							finalizar=true;
 							System.out.println("Su sesión ha finalizado");
 
-						}
-				}
+						}//Fin del if
+				}//Fin del while
 		CO2total=emisionesordenador+emisionesmovil+emisionesplancha+emisionesbici+emisionesbus+emisionescoche;
 		CO2grupo=CO2total*numeropersonas;
 		System.out.println("Su CO₂ producido hoy es "+CO2total+"kg por hora");
 		System.out.println("Y su CO₂ producido en grupo hoy es de "+CO2grupo+"kg por hora");
-		}
 	}
 
-
+}
